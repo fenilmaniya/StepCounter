@@ -24,17 +24,10 @@ jobs:
 
       - name: Distribute app via Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
-        env:
-          firebaseToken: ${{ secrets.FIREBASE_TOKEN_YOGA_MASTER }}
-          firebaseGroups: INTERNAL
-          firebaseAppId: ${{ secrets.FIREBASE_APP_ID_YOGAMASTER }}
-          notes: ${{ github.event.head_commit.message }}
-#         run: |
-#           firebase \
-#             appdistribution:distribute android/app/build/outputs/apk/debug/app-debug.apk \
-#             --app $firebaseAppId \
-#             --release-notes "$notes" \
-#             --groups "$firebaseGroups" \
-#             --token "$firebaseToken"
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID_YOGAMASTER }}
+          token: ${{secrets.FIREBASE_TOKEN}}
+          groups: INTERNAL
+          file: app/build/outputs/apk/debug/app-debug.apk
       
       
