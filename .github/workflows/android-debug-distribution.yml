@@ -4,7 +4,7 @@ name: CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
 
   workflow_dispatch:
 
@@ -16,21 +16,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        
       - name: Build the app
         run: ./gradlew build
 
       - name: Distribute app via Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         env:
           firebaseToken: ${{ secrets.FIREBASE_TOKEN_YOGA_MASTER }}
           firebaseGroups: INTERNAL
-          firebaseAppId: 1:368400756007:android:943a3ee4f7baa2878e4d02
+          firebaseAppId: ${{ secrets.FIREBASE_APP_ID_YOGAMASTER }}
           notes: ${{ github.event.head_commit.message }}
-        run: |
-          firebase \
-            appdistribution:distribute android/app/build/outputs/apk/debug/app-debug.apk \
-            --app $firebaseAppId \
-            --release-notes "$notes" \
-            --groups "$firebaseGroups" \
-            --token "$firebaseToken"
+#         run: |
+#           firebase \
+#             appdistribution:distribute android/app/build/outputs/apk/debug/app-debug.apk \
+#             --app $firebaseAppId \
+#             --release-notes "$notes" \
+#             --groups "$firebaseGroups" \
+#             --token "$firebaseToken"
       
       
