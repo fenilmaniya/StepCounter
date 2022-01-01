@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "368400756007",
+    "project_id": "yogamaster-89013",
+    "storage_bucket": "yogamaster-89013.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368400756007:android:943a3ee4f7baa2878e4d02",
+        "android_client_info": {
+          "package_name": "vgng.meditation.stepcounter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368400756007-p53h46u2aesoj397a1rihitoi99mvg9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-fCtc-T2VB2h6c9591V7hv6nYNbTuEnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368400756007-p53h46u2aesoj397a1rihitoi99mvg9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
