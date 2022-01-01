@@ -29,6 +29,7 @@ jobs:
         env:
           appId: ${{ secrets.FIREBASE_APP_ID_YOGAMASTER }}
           FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}
+          GCP_SA_KEY: ${{ secrets.FIREBASE_TOKEN }}
           groups: INTERNAL
           file: app/build/outputs/apk/release/app-release-unsigned.apk
       
